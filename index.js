@@ -1,7 +1,7 @@
 let docs = [];
 
 async function getData() {
-  return await fetch('https://api.plos.org/search?q=title:DNA')
+  return await fetch("https://api.plos.org/search?q=title:DNA")
     .then((response) => response.json())
     .then((json) => {
       docs = json.response.docs;
@@ -32,7 +32,7 @@ function showAuthorDisplayByArticleScore(target) {
 
 function findById() {
   // Develop a function that gets the record with id "10.1371/journal.pgen.1006605" update "article_type" to "Newspaper" and print this by console.
-  return docs.find((doc) => doc.id === '10.1371/journal.pgen.1006605');
+  return docs.find((doc) => doc.id === "10.1371/journal.pgen.1006605");
 }
 
 function showAllArticleTypes() {
@@ -55,7 +55,7 @@ function showAllJournals() {
 
   return arrayJournals
     .filter((item, index) => arrayJournals.indexOf(item) === index)
-    .join(',');
+    .join(",");
 }
 
 function removeProperty(property) {
@@ -68,67 +68,64 @@ function removeProperty(property) {
 }
 
 function showRange() {
+  // Develop a function that prints by console only the records from id "10.1371/journal.pone.0047101" to "10.1371/journal.pgen.1000047".
   let startIndex = docs.findIndex(
-    (doc) => doc.id === '10.1371/journal.pone.0047101'
+    (doc) => doc.id === "10.1371/journal.pone.0047101"
   );
   let endIndex = docs.findIndex(
-    (doc) => doc.id === '10.1371/journal.pgen.1000047'
+    (doc) => doc.id === "10.1371/journal.pgen.1000047"
   );
-  let arrayRanged = [];
 
-  for (let i = startIndex; i <= endIndex; i++) {
-    arrayRanged.push(docs[i]);
-  }
-
-  return arrayRanged;
+  return docs.splice(startIndex, endIndex - 1);
 }
 
 function addArray() {
+  // Develop a function that creates an array from the given "docs" and add the following array to it and print it to the console.
   const array = [
     {
-      id: '10.1371/journal.pone.0177149',
-      journal: 'Wall Street',
-      eissn: '1932-6203',
-      publication_date: '2017-05-03T00:00:00Z',
-      article_type: 'Newspaper',
+      id: "10.1371/journal.pone.0177149",
+      journal: "Wall Street",
+      eissn: "1932-6203",
+      publication_date: "2017-05-03T00:00:00Z",
+      article_type: "Newspaper",
       author_display: [
-        'Irina Bruck',
-        'Nalini Dhingra',
-        'Matthew P. Martinez',
-        'Daniel L. Kaplan',
+        "Irina Bruck",
+        "Nalini Dhingra",
+        "Matthew P. Martinez",
+        "Daniel L. Kaplan",
       ],
       abstract: [
-        '\nDpb11 is required for the initiation of DNA replication in budding yeast. We found that Dpb11 binds tightly to single-stranded DNA (ssDNA) or branched DNA structures, while its human homolog, TopBP1, binds tightly to branched-DNA structures. We also found that Dpb11 binds stably to CDK-phosphorylated RPA, the eukaryotic ssDNA binding protein, in the presence of branched DNA. A Dpb11 mutant specifically defective for DNA binding did not exhibit tight binding to RPA in the presence of DNA, suggesting that Dpb11-interaction with DNA may promote the recruitment of RPA to melted DNA. We then characterized a mutant of Dpb11 that is specifically defective in DNA binding in budding yeast cells. Expression of dpb11-m1,2,3,5,ΔC results in a substantial decrease in RPA recruitment to origins, suggesting that Dpb11 interaction with DNA may be required for RPA recruitment to origins. Expression of dpb11-m1,2,3,5,ΔC also results in diminished GINS interaction with Mcm2-7 during S phase, while Cdc45 interaction with Mcm2-7 is like wild-type. The reduced GINS interaction with Mcm2-7 may be an indirect consequence of diminished origin melting. We propose that the tight interaction between Dpb11, CDK-phosphorylated RPA, and branched-DNA may be required for the essential function of stabilizing melted origin DNA in vivo. We also propose an alternative model, wherein Dpb11-DNA interaction is required for some other function in DNA replication initiation, such as helicase activation.\n',
+        "\nDpb11 is required for the initiation of DNA replication in budding yeast. We found that Dpb11 binds tightly to single-stranded DNA (ssDNA) or branched DNA structures, while its human homolog, TopBP1, binds tightly to branched-DNA structures. We also found that Dpb11 binds stably to CDK-phosphorylated RPA, the eukaryotic ssDNA binding protein, in the presence of branched DNA. A Dpb11 mutant specifically defective for DNA binding did not exhibit tight binding to RPA in the presence of DNA, suggesting that Dpb11-interaction with DNA may promote the recruitment of RPA to melted DNA. We then characterized a mutant of Dpb11 that is specifically defective in DNA binding in budding yeast cells. Expression of dpb11-m1,2,3,5,ΔC results in a substantial decrease in RPA recruitment to origins, suggesting that Dpb11 interaction with DNA may be required for RPA recruitment to origins. Expression of dpb11-m1,2,3,5,ΔC also results in diminished GINS interaction with Mcm2-7 during S phase, while Cdc45 interaction with Mcm2-7 is like wild-type. The reduced GINS interaction with Mcm2-7 may be an indirect consequence of diminished origin melting. We propose that the tight interaction between Dpb11, CDK-phosphorylated RPA, and branched-DNA may be required for the essential function of stabilizing melted origin DNA in vivo. We also propose an alternative model, wherein Dpb11-DNA interaction is required for some other function in DNA replication initiation, such as helicase activation.\n",
       ],
       title_display:
-        'Dpb11 may function with RPA and DNA to initiate DNA replication',
+        "Dpb11 may function with RPA and DNA to initiate DNA replication",
       score: 7.018296,
     },
     {
-      id: '10.1371/journal.pgen.1006699',
-      journal: 'Wall Street',
-      eissn: '1553-7404',
-      publication_date: '2017-02-10T00:00:00Z',
-      article_type: 'Newspaper',
+      id: "10.1371/journal.pgen.1006699",
+      journal: "Wall Street",
+      eissn: "1553-7404",
+      publication_date: "2017-02-10T00:00:00Z",
+      article_type: "Newspaper",
       author_display: [
-        'Concetta Cuozzo',
-        'Antonio Porcellini',
-        'Tiziana Angrisano',
-        'Annalisa Morano',
-        'Bongyong Lee',
-        'Alba Di Pardo',
-        'Samantha Messina',
-        'Rodolfo Iuliano',
-        'Alfredo Fusco',
-        'Maria R. Santillo',
-        'Mark T. Muller',
-        'Lorenzo Chiariotti',
-        'Max E. Gottesman',
-        'Enrico V. Avvedimento',
+        "Concetta Cuozzo",
+        "Antonio Porcellini",
+        "Tiziana Angrisano",
+        "Annalisa Morano",
+        "Bongyong Lee",
+        "Alba Di Pardo",
+        "Samantha Messina",
+        "Rodolfo Iuliano",
+        "Alfredo Fusco",
+        "Maria R. Santillo",
+        "Mark T. Muller",
+        "Lorenzo Chiariotti",
+        "Max E. Gottesman",
+        "Enrico V. Avvedimento",
       ],
-      abstract: [''],
+      abstract: [""],
       title_display:
-        'Correction: DNA Damage, Homology-Directed Repair, and DNA Methylation',
+        "Correction: DNA Damage, Homology-Directed Repair, and DNA Methylation",
       score: 7.018296,
     },
   ];
@@ -137,25 +134,31 @@ function addArray() {
 }
 
 function oddDocs() {
+  // Develop a function that takes the odd positions of the given array "docs" then with the new array obtained it must be modified so that the list of objects has the following format.
+  // a) "title" must be equal to concatenate "journal" and "title_display".
+  // b) "score" must be equal to "score".
+  // c) "article_type" must be equal to "article_type".
+  // d) "authors" must be equal to concatenate the array "author_display" separated by "-".
+  // e) “id” must be equal to “id”.
   let oddDocsArray = [];
 
   docs.forEach((doc, index) => {
     if (index % 2 !== 0) {
       oddDocsArray.push({
         id: doc.id,
-        title: doc.title_display + ' - ' + doc.journal,
+        title: doc.title_display + " - " + doc.journal,
         score: doc.score,
         article_type: doc.article_type,
-        authors: doc.author_display.join(' - '),
+        authors: doc.author_display.join(" - "),
       });
     }
   });
 
-  return sortBy(oddDocsArray, 'id');
+  return sortBy(oddDocsArray, "id");
 }
 
 function sortBy(array, parameter) {
-  // Order descending
+  // Create a function to sort in descending order that receives the array to be sorted and the property to be sorted as parameters and print the new sorted array in the console. Call this new function to organize the new array obtained.
   return array.sort((a, b) => {
     if (a[parameter] > b[parameter]) {
       return 1;
@@ -168,15 +171,15 @@ function sortBy(array, parameter) {
 }
 
 function solveTest() {
-  console.log('Punto 1:', filterByArticleType('Research Article'));
-  console.log('Punto 2:', showAuthorDisplayByArticleScore(6.0));
-  console.log('Punto 3:', findById());
-  console.log('Punto 4:', showAllArticleTypes());
-  console.log('Punto 5:', showAllJournals());
-  console.log('Punto 6:', removeProperty('abstract'));
-  console.log('Punto 7:', showRange());
-  console.log('Punto 8:', addArray());
-  console.log('Punto 9:', oddDocs());
+  console.log("Punto 1:", filterByArticleType("Research Article"));
+  console.log("Punto 2:", showAuthorDisplayByArticleScore(6.0));
+  console.log("Punto 3:", findById());
+  console.log("Punto 4:", showAllArticleTypes());
+  console.log("Punto 5:", showAllJournals());
+  console.log("Punto 6:", removeProperty("abstract"));
+  console.log("Punto 7:", showRange());
+  console.log("Punto 8:", addArray());
+  console.log("Punto 9:", oddDocs());
 }
 
 get();
