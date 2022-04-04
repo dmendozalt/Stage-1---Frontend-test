@@ -76,7 +76,7 @@ function showRange() {
     (doc) => doc.id === "10.1371/journal.pgen.1000047"
   );
 
-  return docs.splice(startIndex, endIndex - 1);
+  return docs.slice(startIndex, endIndex + 1);
 }
 
 function addArray() {
